@@ -1,3 +1,3 @@
 This is used to do fun
 
-Miss you!
+I could like to learn git
