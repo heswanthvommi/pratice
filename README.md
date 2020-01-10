@@ -1,8 +1,6 @@
- s used to do fun, but here is no fun while learning git
+ s used to do fun, but its not so fun while learning git
 
- ................
- 
- abcdef
+ abcdefghi
 
 
 I could like to learn git
