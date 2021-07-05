@@ -1,4 +1,4 @@
- s used to do fun, but its not so fun while learning git
+It is used to do fun, but its not so fun while learning git
 
  abcdefghi
 
