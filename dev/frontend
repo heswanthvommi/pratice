@@ -103,7 +103,7 @@ metadata:
     operation: Update
     time: "2021-06-28T13:44:30Z"
   name: acp-frontend-service-64c5dd67fc-8bkm4
-  namespace: azeti-apps
+  namespace: dev
   ownerReferences:
   - apiVersion: apps/v1
     blockOwnerDeletion: true
@@ -112,7 +112,7 @@ metadata:
     name: acp-frontend-service-64c5dd67fc
     uid: 7fd319aa-9d25-420e-99f7-742ea8a3d743
   resourceVersion: "1639089"
-  selfLink: /api/v1/namespaces/azeti-apps/pods/acp-frontend-service-64c5dd67fc-8bkm4
+  selfLink: /api/v1/namespaces/dev/pods/acp-frontend-service-64c5dd67fc-8bkm4
   uid: 86174aa8-5770-47a9-98c8-8e961b47771a
 spec:
   containers:
