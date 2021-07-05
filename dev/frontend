@@ -1,0 +1,199 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubernetes.io/psp: eks.privileged
+  creationTimestamp: "2021-06-28T13:44:18Z"
+  generateName: acp-frontend-service-64c5dd67fc-
+  labels:
+    io.kompose.service: acp-frontend-service
+    pod-template-hash: 64c5dd67fc
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:io.kompose.service: {}
+          f:pod-template-hash: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"7fd319aa-9d25-420e-99f7-742ea8a3d743"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:containers:
+          k:{"name":"acp-frontend-service"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":80,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:protocol: {}
+              k:{"containerPort":92,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:protocol: {}
+              k:{"containerPort":443,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:protocol: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:imagePullSecrets:
+          .: {}
+          k:{"name":"harborkey"}:
+            .: {}
+            f:name: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-06-28T13:44:18Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"120.0.4.186"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-06-28T13:44:30Z"
+  name: acp-frontend-service-64c5dd67fc-8bkm4
+  namespace: azeti-apps
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: acp-frontend-service-64c5dd67fc
+    uid: 7fd319aa-9d25-420e-99f7-742ea8a3d743
+  resourceVersion: "1639089"
+  selfLink: /api/v1/namespaces/azeti-apps/pods/acp-frontend-service-64c5dd67fc-8bkm4
+  uid: 86174aa8-5770-47a9-98c8-8e961b47771a
+spec:
+  containers:
+  - image: harbor-aws.azeti.net/azeti/acp-frontend:acbaca0416ea69bbecfd2c218d0a9d169942657b
+    imagePullPolicy: Always
+    name: acp-frontend-service
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    - containerPort: 443
+      protocol: TCP
+    - containerPort: 92
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-4kxrq
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  imagePullSecrets:
+  - name: harborkey
+  nodeName: ip-120-0-4-91.eu-central-1.compute.internal
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-4kxrq
+    secret:
+      defaultMode: 420
+      secretName: default-token-4kxrq
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-28T13:44:18Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-28T13:44:30Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-28T13:44:30Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-06-28T13:44:18Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://6587240cd86a7c45ead963c732e8bcdaf16eff0f3d78ac83a9090364f9f208f7
+    image: harbor-aws.azeti.net/azeti/acp-frontend:acbaca0416ea69bbecfd2c218d0a9d169942657b
+    imageID: docker-pullable://harbor-aws.azeti.net/azeti/acp-frontend@sha256:b9b3b66383b9505f75ce317238105ded12c51ff73e701b3b72d2a9c8b21a08b9
+    lastState: {}
+    name: acp-frontend-service
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-06-28T13:44:29Z"
+  hostIP: 120.0.4.91
+  phase: Running
+  podIP: 120.0.4.186
+  podIPs:
+  - ip: 120.0.4.186
+  qosClass: BestEffort
+  startTime: "2021-06-28T13:44:18Z"
+
